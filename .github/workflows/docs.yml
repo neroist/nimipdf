@@ -30,7 +30,7 @@ jobs:
 
       - name: Generate documentation
         run: | 
-          nimble install
+          nimble install -y
           nimble docs
 
       - name: Deploy to GitHub Pages
