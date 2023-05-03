@@ -1,3 +1,5 @@
 *.dll
 *.exe
 *.html
+
+!docs/index.html
