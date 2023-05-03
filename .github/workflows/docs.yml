@@ -29,7 +29,9 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate documentation
-        run: nimble docs
+        run: | 
+          nimble install
+          nimble docs
 
       - name: Deploy to GitHub Pages
         if: success()
