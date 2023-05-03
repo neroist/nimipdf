@@ -159,7 +159,7 @@ nbCodeSkip:
   nbSavePdf
 
 nbText: """
-The generated pdf file can be found [here](./hello.pdf)
+The generated pdf file can be found [here](https://neroist.github.io/nimipdf/hello.pdf)
 """
 
 when defined(md):
