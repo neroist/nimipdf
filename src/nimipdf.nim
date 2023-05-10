@@ -28,10 +28,14 @@ template nbInitPDF*(theme = usePDF, thisFileRel = "") =
   })
 
   nbPdf.objectSettings = createObjectSettings({
+    "useLocalLinks": true,
+
+    "load.blockLocalFileAccess": false,
+
     "web.background": true,
     "web.loadImages": true,
     "web.enableJavascript": true,
-    "web.enableIntelligentShrinking": true
+    "web.enableIntelligentShrinking": true,
   })
 
   nbPdf.converter = createConverter(nbPdf.globalSettings)
