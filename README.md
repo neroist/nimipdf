@@ -18,6 +18,8 @@ nimble install nimipdf
 Emoji's don't work properly, so Twemoji is used instead of your OS's native
 emoji set.
 
+In addition, images *might* require the absolute path to the image.
+
 ## 📝 How Nimipdf Works!
 
 PDFs are generated through the use of libwkhtmltox 
@@ -160,5 +162,5 @@ nbSavePdf
 
 
 
-The generated pdf file can be found [here](./hello.pdf)
+The generated pdf file can be found [here](https://neroist.github.io/nimipdf/hello.pdf)
 
