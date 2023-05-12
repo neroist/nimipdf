@@ -35,6 +35,7 @@ template nbInitPDF*(theme = usePDF, thisFileRel = "") =
     "web.background": true,
     "web.loadImages": true,
     "web.enableJavascript": true,
+    "web.enableIntelligentShrinking": true
   })
 
   nbPdf.converter = createConverter(nbPdf.globalSettings)
