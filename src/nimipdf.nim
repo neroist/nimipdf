@@ -35,7 +35,6 @@ template nbInitPDF*(theme = usePDF, thisFileRel = "") =
     "web.background": true,
     "web.loadImages": true,
     "web.enableJavascript": true,
-    "web.enableIntelligentShrinking": true,
   })
 
   nbPdf.converter = createConverter(nbPdf.globalSettings)
@@ -43,6 +42,11 @@ template nbInitPDF*(theme = usePDF, thisFileRel = "") =
   nbPdf.setObjectSettings({
     "web.defaultEncoding": "utf-8",
   })
+
+template nbPageBreak* =
+  nbRawHtml: """
+<div style="page-break-before: always !important;"></div>
+"""
 
 template nbSavePDF* =
   nb.nbCollectAllNbJs()
