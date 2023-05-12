@@ -24,7 +24,7 @@ proc usePDF*(doc: var NbDoc) =
   doc.partials["source_section"] = ""
 
   # fix broken emojis
-  # thank you @viceice!
+  # thank you @viceice & @datasci-live!
   if not doc.partials.contains("head_other"):
     doc.partials["head_other"] = emojiFix
   else:
