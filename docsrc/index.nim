@@ -106,6 +106,11 @@ Here, we'll use
 [hello.nim](https://github.com/pietroppeter/nimib/blob/main/docsrc/hello.nim):
 """
 
+when not defined(md):
+  nbText: """
+> The code block is too long, skip down to the next page...
+"""
+
 nbCodeSkip:
   import strformat, strutils
 
