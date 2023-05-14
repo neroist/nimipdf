@@ -67,6 +67,7 @@ Nimipdf provides two main templates, so lets talk about those.
      [here](https://wkhtmltopdf.org/libwkhtmltox/pagesettings.html#pagePdfObject),
      and can be set via a similar way to global settings 
      (`setObjectSetting`)
+- use `nbPageBreak` to insert a page break
 - use `nbSavePdf` to save document
 
 The `pdf` submodule from 
@@ -79,7 +80,7 @@ modify nimipdf's behavior (for example, adding callback functions to
 
 - Initialize nimipdf (and wkhtmltopdf) with `nbInitPdf`
 - Write your usual nimib code (nbText, nbCode, etc.)
-- Save the PDF using `nbSavePdf`. This also de-inits wkhtmltopdf
+- Save the PDF using `nbSavePdf` (this also de-inits wkhtmltopdf)
 
 There is a more "hands-on" example in the following section.
 
