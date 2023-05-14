@@ -34,11 +34,14 @@ template nbInitPDF*(theme = usePDF, thisFileRel = "") =
 
     "web.background": true,
     "web.loadImages": true,
-    "web.enableJavascript": true,
-    "web.enableIntelligentShrinking": true
+    "web.enableJavascript": true
   })
 
   nbPdf.converter = createConverter(nbPdf.globalSettings)
+
+  nbPdf.setGlobalSettings({
+    "outlineDepth": 7
+  })
 
   nbPdf.setObjectSettings({
     "web.defaultEncoding": "utf-8",
