@@ -32,48 +32,48 @@ In addition, images *might* require the absolute path to the image.
 
 ## 📝 How Nimipdf Works!
 
-PDFs are generated through the use of libwkhtmltox 
+PDFs are generated through the use of libwkhtmltox
 [Nim bindings](https://github.com/neroist/nim-wkhtmltox). This allows for
 quick and simple PDF generation while also providing easy customizaton.
 
-Nimipdf provides two main templates, so lets talk about those. 
+Nimipdf provides two main templates, so lets talk about those.
 
 - `nbInitPdf`:
   - When calling `nbInitPdf`, libwkhtmltox (and nimib) are initalized, and
-    the converter, global settings, and object settings are created and 
+    the converter, global settings, and object settings are created and
     attached onto the injected `nbPdf` variable.
 
 - `nbSavePdf`:
-  - When saving via `nbSavePdf`, nimipdf takes the rendered html 
-    output of your nimib document and converts it into a PDF using 
+  - When saving via `nbSavePdf`, nimipdf takes the rendered html
+    output of your nimib document and converts it into a PDF using
     libwkhtmltox.
 
     Before this, however, the `out` and `documentTitle` global settings are
-    set to the nimib document's filename (`nb.filename`) and title 
+    set to the nimib document's filename (`nb.filename`) and title
     (`doc.context["title"]`) respectively.
 
     Libwkhtmltopdf is also de-initialized when calling `nbSavePdf`.
 
-## 🐝 API 
+## 🐝 API
 
 - `nbInitPdf` injects a `nbPdf` variable
   - `nbPdf.converter` contains the wkhtmltopdf converter used to generate the PDF.
   - `nbPdf.globalSettings` contains the wkhtmltopdf global settings. A list
-     of available settings to set can be found 
-     [here](https://wkhtmltopdf.org/libwkhtmltox/pagesettings.html#pagePdfGlobal), 
+     of available settings to set can be found
+     [here](https://wkhtmltopdf.org/libwkhtmltox/pagesettings.html#pagePdfGlobal),
      and can be set via `nbPdf.setGlobalSetting(name, value)`
   - `nbPdf.objectSettings` contains the wkhtmltopdf object settings. A list
-     of available settings to set can be also found 
+     of available settings to set can be also found
      [here](https://wkhtmltopdf.org/libwkhtmltox/pagesettings.html#pagePdfObject),
-     and can be set via a similar way to global settings 
+     and can be set via a similar way to global settings
      (`setObjectSetting`)
 - use `nbPageBreak` to insert a page break
 - use `nbSavePdf` to save document
 
-The `pdf` submodule from 
+The `pdf` submodule from
 [nimwkhtmltox](https://github.com/neroist/nim-wkhtmltox) is exported, so
 you can also use functions and methods from wkhtmltox aswell to further
-modify nimipdf's behavior (for example, adding callback functions to 
+modify nimipdf's behavior (for example, adding callback functions to
 `nbPdf.converter`).
 
 ## ⁉️ How to Use
@@ -84,7 +84,7 @@ modify nimipdf's behavior (for example, adding callback functions to
 
 There is a more "hands-on" example in the following section.
 
-## 👋 Get Started/Example 
+## 👋 Get Started/Example
 
 To start, firstly import the library and nimib (of course...)
 """
@@ -103,7 +103,7 @@ nbCodeSkip:
 nbText: """
 Next, add your usual nimib code (nbCode, nbText, etc.)
 
-Here, we'll use 
+Here, we'll use
 [hello.nim](https://github.com/pietroppeter/nimib/blob/main/docsrc/hello.nim):
 """
 
